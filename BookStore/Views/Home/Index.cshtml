@@ -1,0 +1,38 @@
+﻿@model BookStore.ViewModel.RetriveDataViewModel;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Price</th>
+      <th scope="col">Author</th>
+      <th scope="col">Procedure</th>
+
+    </tr>
+  </thead>
+  <tbody>
+      @foreach (var book in Model.Books)
+    {
+    <tr>
+        @if(book.Author != null){
+      <th scope="row">@book.Id</th>
+      <td>@book.Title</td>
+      <td>@book.Price</td>
+      <td><a asp-action="AuthorDetails" asp-route-id="@book.AuthorId">@book.Author.Name</a></td>
+      <td><a asp-action="Edit" asp-route-id="@book.Id">Edit</a> | <a asp-action="Delete" asp-route-id="@book.Id">Delete</a></td>
+        }
+    </tr>
+    }
+  </tbody>
+</table>
+</div>
+

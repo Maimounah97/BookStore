@@ -1,0 +1,20 @@
+﻿@model BookStore.ViewModel.UpdateBookPriceVM
+@{
+    
+}
+@{}
+ <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="@Model.bookId" />
+        <div class="row">
+            <div class="col-sm-6">
+                <label for="Price">Price</label>
+                <input asp-for="@Model.Price" class="form-control" />
+            </div>
+            
+                <div class="col-sm-12 mt-5">
+                    <button type="submit" class="btn btn-primary rounded-pill pl-5"> Submit </button>
+                </div>
+        </div>
+               
+    </form>
+

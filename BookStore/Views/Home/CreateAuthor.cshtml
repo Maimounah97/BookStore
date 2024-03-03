@@ -1,0 +1,23 @@
+﻿@model BookStore.ViewModel.AddAuthorViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div>
+	<form asp-action="CreateAuthor" method="post">
+		<div class="row">
+			<div class="col-6 mb-3">
+				<div class="col-6 mb-3">
+				</div>
+				<div class="col-6 mb-3">
+					<label class="form-label">Name</label>
+					<input asp-for="Name" class="form-control" />
+				</div>
+
+				<div class="col-12 d-flex mt-2 justify-content-sm-center">
+					<button type="submit" class="btn btn-primary rounded-pill pl-5"> Submit </button>
+				</div>
+			</div>
+	</form>
+</div>

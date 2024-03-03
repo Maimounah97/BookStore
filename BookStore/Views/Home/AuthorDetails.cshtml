@@ -1,0 +1,32 @@
+﻿@model BookStore.ViewModel.AuthorDetailsViewModel;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h3 class="display-4">@Model.Author.Name</h3>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Price</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model.Books)
+            {
+                <tr>
+                        <th scope="row">@book.Id</th>
+                        <td>@book.Title</td>
+                        <td>@book.Price</td>
+                       
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
