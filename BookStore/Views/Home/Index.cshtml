@@ -28,7 +28,14 @@
       <td>@book.Title</td>
       <td>@book.Price</td>
       <td><a asp-action="AuthorDetails" asp-route-id="@book.AuthorId">@book.Author.Name</a></td>
-      <td><a asp-action="Edit" asp-route-id="@book.Id">Edit</a> | <a asp-action="Delete" asp-route-id="@book.Id">Delete</a></td>
+      <td><a asp-action="Edit" asp-route-id="@book.Id">Edit</a> |
+                            <span class="link-danger">
+                                @Html.ActionLink("Delete", "Delete", new { id = book.Id }, new
+                                    {
+                                        onclick = "return confirm('Are sure wants to delete ?');"
+                                    })
+          </span>
+       </td>
         }
     </tr>
     }
